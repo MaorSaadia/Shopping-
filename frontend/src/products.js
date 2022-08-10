@@ -77,7 +77,7 @@ const products = [
     rating: 4 ,
     numReviews: 12 ,
   },
-
+  
   {
     _id: '7',
     name: 'Sony Playstation 5',
