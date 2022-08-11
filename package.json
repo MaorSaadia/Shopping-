@@ -1,0 +1,22 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "Shooping Cart App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaorSaadia/Shopping-.git"
+  },
+  "author": "Maor Saadia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaorSaadia/Shopping-/issues"
+  },
+  "homepage": "https://github.com/MaorSaadia/Shopping-#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
