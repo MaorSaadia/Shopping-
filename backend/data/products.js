@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
     image: '/images/airpods.jpg',
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'iPhone 11 Pro 256GB Memory',
     image: '/images/phone.jpg',
     description:
@@ -41,7 +39,6 @@ const products = [
   // },
 
   {
-    _id: '4',
     name: 'Sony Playstation 4 Pro White Version',
     image: '/images/playstation.jpg',
     description:
@@ -55,7 +52,6 @@ const products = [
   },
 
   // {
-  //   _id: '5',
   //   name: 'Logitech G-Series Gaming Mouse',
   //   image: '/images/mouse.jpg',
   //   description:
@@ -70,7 +66,6 @@ const products = [
 
   
   {
-    _id: '5',
     name: 'Samsung Galaxy S22 Ultra 5G',
     image: '/images/SamsungGalaxyS22U.png',
     description:
@@ -84,7 +79,6 @@ const products = [
   },
 
   // {
-  //   _id: '6',
   //   name: 'Amazon Echo Dot 3rd Generation',
   //   image: '/images/alexa.jpg',
   //   description:
@@ -98,7 +92,6 @@ const products = [
   // },
   
   {
-    _id: '6',
     name: 'Nintendo Switch Lite',
     image: '/images/SwitchLite.jpeg',
     description:
@@ -112,7 +105,6 @@ const products = [
   },
 
   {
-    _id: '7',
     name: 'Sony Playstation 5',
     image: '/images/SonyPs5.jpg',
     description:
@@ -126,7 +118,6 @@ const products = [
   },
 
   {
-    _id: '8',
     name: 'OnePlus Nord2 5G',
     image: '/images/OnePlusNord2.jpg',
     description:
@@ -139,7 +130,7 @@ const products = [
     numReviews: 9,
   },
   {
-    _id: '9',
+   
     name: 'Xbox Series X',
     image: '/images/XboxSeriesX.jpg',
     description:
