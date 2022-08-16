@@ -10,7 +10,7 @@ const App = ()=> {
   return (
   <Router>
     <Header/>
-    <main class='py-3'>
+    <main className='py-3'>
       <Container>
         <Routes>
         <Route path='/' element={<HomeScreen />} />
