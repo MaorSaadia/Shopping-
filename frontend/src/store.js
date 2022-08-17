@@ -1,18 +1,19 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { productListReducer,productDetailsReducer } from './reducers/productReducer'
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import {
+  productListReducer,
+  productDetailsReducer,
+} from "./reducers/productReducer";
 
 const reducer = combineReducers({
   productList: productListReducer,
   productDeatils: productDetailsReducer,
-})
+});
 
 const store = configureStore({
-    reducer,
-  })
+  reducer,
+});
 
- export default store
-
-
+export default store;
 
 // import {combineReducers,/*applyMiddleware*/}from 'redux'
 // import { configureStore } from '@reduxjs/toolkit'

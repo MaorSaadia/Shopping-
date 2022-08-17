@@ -1,10 +1,10 @@
 main {
-    min-height: 85vh;
+  min-height: 85vh;
 }
 
-h3{
-    padding: 1rem 0;
+h3 {
+  padding: 1rem 0;
 }
-.rating span{
-    margin: 0.1vh;
+.rating span {
+  margin: 0.1vh;
 }
