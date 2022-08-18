@@ -20,7 +20,7 @@ import { listDetailsProducts } from '../actions/productAction';
 const ProductScreen = () => {
   const { id } = useParams();
   let navigate = useNavigate();
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
 
