@@ -15,9 +15,13 @@ const cartItemsFromStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
   : [];
 
+const intialState = {
+  cart: { cartItems: 'cartItemsFromStorage' },
+};
+
 const store = configureStore({
   reducer,
-  cart: { cartItems: 'cartItemsFromStorage' },
+  intialState,
 });
 
 export default store;
