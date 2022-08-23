@@ -4,14 +4,15 @@ import {
   productDetailsReducer,
 } from './reducers/productReducer';
 import { cartReducer } from './reducers/cartReducer';
-import { userLoginReducer } from './reducers/userReducer';
+import { userLoginReducer, userRegisterReducer } from './reducers/userReducer';
 
-const reducer = combineReducers({
+/*const reducer = combineReducers({
   productList: productListReducer,
   productDeatils: productDetailsReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
-});
+  userRegistor: userRegisterReducer,
+});*/
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
@@ -27,7 +28,13 @@ const intialState = {
 };
 
 const store = configureStore({
-  reducer,
+  reducer: {
+    productList: productListReducer,
+    productDeatils: productDetailsReducer,
+    cart: cartReducer,
+    userLogin: userLoginReducer,
+    userRegistor: userRegisterReducer,
+  },
   intialState,
 });
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Row,
@@ -20,6 +20,8 @@ const CartScreen = () => {
 
   const qty = location ? Number(location.split('=')[0]) : 1;
 
+  let navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
@@ -35,6 +37,7 @@ const CartScreen = () => {
 
   const checkoutHandler = () => {
     console.log('checkout');
+    navigate('/login?redirect=shipping');
     //history.push('/login?redirect=shipping')
   };
 
