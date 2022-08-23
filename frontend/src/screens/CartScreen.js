@@ -16,9 +16,9 @@ import { addToCart } from '../actions/cartActions';
 
 const CartScreen = () => {
   const { productId } = useParams();
-  const { loaction } = useLocation;
+  const { location } = useLocation();
 
-  const qty = loaction ? Number(loaction.split('=')[0]) : 1;
+  const qty = location ? Number(location.split('=')[0]) : 1;
 
   const dispatch = useDispatch();
 
