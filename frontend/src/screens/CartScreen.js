@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
-import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useParams,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Row,
@@ -15,11 +21,14 @@ import Message from '../component/Message';
 import { addToCart } from '../actions/cartActions';
 
 const CartScreen = () => {
-  const { productId } = useParams();
-  const { location } = useLocation();
+  const { id } = useParams();
+  const { search } = useLocation();
+  //const [searchParms] = useSearchParams();
 
-  const qty = location ? Number(location.split('=')[0]) : 1;
+  const qty = search ? Number(search.split('=')[1]) : 1;
 
+  console.log(qty);
+  console.log(id);
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -28,8 +37,10 @@ const CartScreen = () => {
   const { cartItems } = cart;
 
   useEffect(() => {
-    if (productId) dispatch(addToCart(productId, qty));
-  }, [dispatch, productId, qty]);
+    if (id) {
+      dispatch(addToCart(id, qty));
+    }
+  }, [dispatch, id, qty]);
 
   const removeFromCartHandler = (id) => {
     console.log('remove');

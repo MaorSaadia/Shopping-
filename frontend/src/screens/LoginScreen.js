@@ -29,6 +29,8 @@ const LoginScreen = () => {
   const { location } = useLocation();
   const redirect = location ? location.split('=')[1] : '/';
 
+  //console.log(redirect);
+
   useEffect(() => {
     if (userInfo) {
       navigate(redirect);
