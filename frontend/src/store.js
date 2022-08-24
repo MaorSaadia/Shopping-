@@ -1,4 +1,6 @@
+import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import {
   productListReducer,
   productDetailsReducer,
@@ -10,14 +12,17 @@ import {
   userDetailsReducer,
   userUpadateProfileReducer,
 } from './reducers/userReducer';
+import thunk from 'redux-thunk';
 
-/*const reducer = combineReducers({
+const reducer = combineReducers({
   productList: productListReducer,
   productDeatils: productDetailsReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegistor: userRegisterReducer,
-});*/
+  userDetails: userDetailsReducer,
+  userUpadateProfile: userUpadateProfileReducer,
+});
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
@@ -32,18 +37,13 @@ const intialState = {
   userLogin: { userInfo: userInfoFromStorage },
 };
 
-const store = configureStore({
-  reducer: {
-    productList: productListReducer,
-    productDeatils: productDetailsReducer,
-    cart: cartReducer,
-    userLogin: userLoginReducer,
-    userRegistor: userRegisterReducer,
-    userDetails: userDetailsReducer,
-    userUpadateProfile: userUpadateProfileReducer,
-  },
+const middleware = [thunk];
+
+const store = createStore(
+  reducer,
   intialState,
-});
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
 export default store;
 

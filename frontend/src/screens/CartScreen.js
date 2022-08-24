@@ -1,11 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  Link,
-  useParams,
-  useLocation,
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Row,
@@ -18,17 +12,14 @@ import {
   ListGroupItem,
 } from 'react-bootstrap';
 import Message from '../component/Message';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, removeFromCart } from '../actions/cartActions';
 
 const CartScreen = () => {
   const { id } = useParams();
   const { search } = useLocation();
-  //const [searchParms] = useSearchParams();
 
   const qty = search ? Number(search.split('=')[1]) : 1;
 
-  console.log(qty);
-  console.log(id);
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -43,7 +34,7 @@ const CartScreen = () => {
   }, [dispatch, id, qty]);
 
   const removeFromCartHandler = (id) => {
-    console.log('remove');
+    dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
@@ -66,12 +57,7 @@ const CartScreen = () => {
               <ListGroupItem key={item.product}>
                 <Row>
                   <Col md={2}>
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fluid
-                      rounded
-                    ></Image>
+                    <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
@@ -98,19 +84,24 @@ const CartScreen = () => {
                   <Col md={2}>
                     <Button
                       type="button"
-                      variant="light"
+                      variant="dark"
                       onClick={() => removeFromCartHandler(item.product)}
                     >
-                      <i className="fas-fa-trash"></i>
+                      <i className="fas fa-trash"></i>
                     </Button>
                   </Col>
                 </Row>
               </ListGroupItem>
             ))}
+            <Link className="btn btn-dark my-1" to="/">
+              Go Back
+            </Link>
           </ListGroup>
         )}
       </Col>
       <Col md={4}>
+        <h1> </h1>
+        <h3> </h3>
         <Card>
           <ListGroup variant="flush">
             <ListGroupItem>
@@ -118,18 +109,23 @@ const CartScreen = () => {
                 Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 Items
               </h2>
-              $
+              Total Price:{' '}
               {cartItems
                 .reduce((acc, item) => acc + item.qty * item.price, 0)
                 .toFixed(2)}
+              $
             </ListGroupItem>
             <ListGroupItem>
-              <Button
-                type="button"
-                className="btn-block"
-                disabled={cartItems.length === 0}
-                onClick={checkoutHandler}
-              ></Button>
+              <div className="d-grid gap-3">
+                <Button
+                  type="button"
+                  className="btn-block"
+                  disabled={cartItems.length === 0}
+                  onClick={checkoutHandler}
+                >
+                  Proceed To Checkout
+                </Button>
+              </div>
             </ListGroupItem>
           </ListGroup>
         </Card>
