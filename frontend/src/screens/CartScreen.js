@@ -20,7 +20,9 @@ const CartScreen = () => {
 
   const qty = search ? Number(search.split('=')[1]) : 1;
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const dispatch = useDispatch();
 
@@ -33,15 +35,23 @@ const CartScreen = () => {
     }
   }, [dispatch, id, qty]);
 
+  const checkoutHandler = () => {
+    if (!userInfo) {
+      navigate('/login');
+    } else {
+      navigate('/shipping');
+    }
+  };
+
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
 
-  const checkoutHandler = () => {
-    console.log('checkout');
-    navigate('/login?redirect=shipping');
-    //history.push('/login?redirect=shipping')
-  };
+  // const checkoutHandler = () => {
+  //   console.log('checkout');
+  //   navigate('/login?redirect=shipping');
+  //   //history.push('/login?redirect=shipping')
+  // };
 
   return (
     <Row>
@@ -49,7 +59,7 @@ const CartScreen = () => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>
-            Your cart is empty <Link to="/">Go Back</Link>
+            Your cart is empty <Link to="/">Go Back </Link>
           </Message>
         ) : (
           <ListGroup variant="flush">

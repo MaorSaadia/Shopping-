@@ -19,3 +19,25 @@ h2 {
 .rating span {
   margin: 0.1vh;
 }
+
+.active-link {
+  list-style-type: none;
+  color: lavender;
+  margin: 1;
+  padding: 1;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.active-link:hover {
+  color: #75a0f0;
+}
+
+.disabled-link {
+  list-style-type: none;
+  pointer-events: none;
+  margin: 1;
+  padding: 1;
+  overflow: hidden;
+  background-color: #333;
+}
