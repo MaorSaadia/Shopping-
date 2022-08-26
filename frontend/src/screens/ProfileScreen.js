@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Form,
   Button,
@@ -58,78 +58,75 @@ const ProfileScreen = () => {
   };
 
   return (
-    <Row>
-      <Col md={3}>
-        <div>
-          <h1> </h1>
-          <h1> </h1>
-        </div>
-        <h2>User Profile</h2>
-        {message && <Message variant="danger">{message}</Message>}
-        {error && <Message variant="danger">{error}</Message>}
-        {success && <Message variant="success">Profile Updated</Message>}
-        {loading && <Loader />}
-        <Form onSubmit={submitHandler}>
-          <FormGroup controlId="name">
-            <FormLabel>Name:</FormLabel>
-            <FormControl
-              type="name"
-              placeholder="Enter name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></FormControl>
-          </FormGroup>
-          <h5> </h5>
-          <FormGroup controlId="email">
-            <FormLabel>Email Address:</FormLabel>
-            <FormControl
-              type="email"
-              placeholder="Enter Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></FormControl>
-          </FormGroup>
-          <h5> </h5>
+    <>
+      <Link className="btn btn-dark my-3" to="/">
+        Go Back
+      </Link>
+      <Row>
+        <Col md={3}>
+          <h2>User Profile</h2>
+          {message && <Message variant="danger">{message}</Message>}
+          {error && <Message variant="danger">{error}</Message>}
+          {success && <Message variant="success">Profile Updated</Message>}
+          {loading && <Loader />}
+          <Form onSubmit={submitHandler}>
+            <FormGroup controlId="name">
+              <FormLabel>Name:</FormLabel>
+              <FormControl
+                type="name"
+                placeholder="Enter name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></FormControl>
+            </FormGroup>
+            <h5> </h5>
+            <FormGroup controlId="email">
+              <FormLabel>Email Address:</FormLabel>
+              <FormControl
+                type="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></FormControl>
+            </FormGroup>
+            <h5> </h5>
 
-          <FormGroup controlId="password">
-            <FormLabel>Password:</FormLabel>
-            <FormControl
-              type="password"
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></FormControl>
-          </FormGroup>
-          <h5> </h5>
+            <FormGroup controlId="password">
+              <FormLabel>Password:</FormLabel>
+              <FormControl
+                type="password"
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></FormControl>
+            </FormGroup>
+            <h5> </h5>
 
-          <FormGroup controlId="confirmPassword">
-            <FormLabel>Confirm Password:</FormLabel>
-            <FormControl
-              type="password"
-              placeholder="Confirm Password"
-              value={confirmpassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            ></FormControl>
-          </FormGroup>
+            <FormGroup controlId="confirmPassword">
+              <FormLabel>Confirm Password:</FormLabel>
+              <FormControl
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmpassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              ></FormControl>
+            </FormGroup>
 
-          <div>
-            <h2> </h2>
-          </div>
-          <div className="d-grid gap-3">
-            <Button type="submit" variant="primary">
-              Update
-            </Button>
-          </div>
-        </Form>
-      </Col>
-      <Col md={9}>
-        <div>
-          <h1> </h1>
-          <h1> </h1>
-        </div>
-        <h2> My Orders </h2>
-      </Col>
-    </Row>
+            <div>
+              <h2> </h2>
+            </div>
+            <div className="d-grid gap-3">
+              <Button type="submit" variant="primary">
+                Update
+              </Button>
+            </div>
+          </Form>
+        </Col>
+        <Col md={9}>
+          <h2> My Orders </h2>
+        </Col>
+      </Row>
+    </>
   );
 };
 

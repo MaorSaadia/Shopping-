@@ -11,9 +11,9 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
             Sign In
           </Nav.Link>
         ) : (
-          <Link disabled to="/login" className="disabled-link">
+          <Nav.Link disabled to="/login" className="disabled-link">
             Sign In
-          </Link>
+          </Nav.Link>
         )}
       </NavItem>
 
@@ -23,9 +23,9 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
             Shipping
           </Nav.Link>
         ) : (
-          <Link disabled to="/shipping" className="disabled-link">
+          <Nav.Link disabled to="/shipping" className="disabled-link">
             Shipping
-          </Link>
+          </Nav.Link>
         )}
       </NavItem>
 
@@ -43,7 +43,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
 
       <NavItem>
         {step4 ? (
-          <Nav.Link to="/placeorder" className="active-link">
+          <Nav.Link as={Link} to="/placeorder" className="active-link">
             Place Order
           </Nav.Link>
         ) : (

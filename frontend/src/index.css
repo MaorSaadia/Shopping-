@@ -27,10 +27,12 @@ h2 {
   padding: 1;
   overflow: hidden;
   background-color: #333;
+  border-left: 2px solid yellow;
 }
 
 .active-link:hover {
-  color: #75a0f0;
+  color: lavender;
+  background-color: black;
 }
 
 .disabled-link {
@@ -40,4 +42,5 @@ h2 {
   padding: 1;
   overflow: hidden;
   background-color: #333;
+  border-left: 2px solid lightgray;
 }

@@ -53,6 +53,14 @@ const CartScreen = () => {
   //   //history.push('/login?redirect=shipping')
   // };
 
+  // const checkoutHandler = () => {
+  //   if (!userInfo) {
+  //     navigate('/login?redirect=shipping');
+  //   } else {
+  //     navigate('/cart?redirect=shipping');
+  //   }
+  // };
+
   return (
     <Row>
       <Col md={8}>

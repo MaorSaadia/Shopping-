@@ -26,8 +26,8 @@ const LoginScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
 
-  const { location } = useLocation();
-  const redirect = location ? location.split('=')[1] : '/';
+  const { search } = useLocation();
+  const redirect = search ? search.split('=')[1] : '/';
 
   console.log(redirect);
 
