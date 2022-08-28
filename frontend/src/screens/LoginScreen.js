@@ -31,11 +31,11 @@ const LoginScreen = () => {
 
   console.log(redirect);
 
-  useEffect(() => {
-    if (userInfo) {
-      navigate(redirect);
-    }
-  }, [userInfo, redirect]);
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     navigate(redirect);
+  //   }
+  // }, [userInfo, redirect]);
 
   const submitHandler = (e) => {
     e.preventDefault();
