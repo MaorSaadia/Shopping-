@@ -41,12 +41,12 @@ const PlaceOrderScreen = () => {
   const orderCreate = useSelector((state) => state.orderCreate);
   const { order, success, error } = orderCreate;
 
-  // useEffect(() => {
-  //   if (success) {
-  //     navigate(`/order/${order._id}`);
-  //   }
-  //   // eslint-disable-next-line
-  // }, [success]);
+  useEffect(() => {
+    if (success) {
+      navigate(`/orders/${order._id}`);
+    }
+    // eslint-disable-next-line
+  }, [success]);
 
   const PlaceOrderHandler = () => {
     dispatch(

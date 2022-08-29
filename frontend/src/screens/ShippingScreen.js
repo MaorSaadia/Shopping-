@@ -38,6 +38,7 @@ const ShippingScreen = () => {
       </Link>
       <FormContainer>
         <CheckoutSteps step1 />
+
         <h1> Shipping</h1>
         <Form onSubmit={submitHandler}>
           <FormGroup controlId="address">
