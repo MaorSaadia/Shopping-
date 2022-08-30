@@ -19,7 +19,7 @@ const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  let navigate = useNavigate();
+  //let navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -44,9 +44,6 @@ const LoginScreen = () => {
 
   return (
     <>
-      <Link className="btn btn-dark my-3" to="/">
-        Go Back
-      </Link>
       <FormContainer>
         <div>
           <h1> </h1>
