@@ -33,7 +33,7 @@ const CartScreen = () => {
     if (id) {
       dispatch(addToCart(id, qty));
     }
-  }, [dispatch, id, qty]);
+  }, [dispatch, id, qty, navigate]);
 
   const checkoutHandler = () => {
     if (!userInfo) {

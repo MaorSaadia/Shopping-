@@ -29,7 +29,7 @@ const ProductScreen = () => {
 
   useEffect(() => {
     dispatch(listDetailsProducts(id));
-  }, [dispatch, id]);
+  }, [dispatch, id, navigate]);
 
   const addToCartHandler = () => {
     navigate(`/cart/${id}?qty=${qty}`);
