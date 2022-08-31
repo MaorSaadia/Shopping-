@@ -16,6 +16,7 @@ import Rating from '../component/Rating';
 import Message from '../component/Message';
 import Loader from '../component/Loader';
 import { listDetailsProducts } from '../actions/productAction';
+import { addToCart } from '../actions/cartActions';
 
 const ProductScreen = () => {
   const { id } = useParams();
@@ -33,6 +34,11 @@ const ProductScreen = () => {
 
   const addToCartHandler = () => {
     navigate(`/cart/${id}?qty=${qty}`);
+  };
+
+  const addProductToCar = () => {
+    dispatch(addToCart(id, qty));
+    window.alert('The Product Added To Your Cart');
   };
 
   return (
@@ -110,11 +116,23 @@ const ProductScreen = () => {
                 <ListGroupItem>
                   <div className="d-grid gap-2">
                     <Button
-                      onClick={addToCartHandler}
+                      onClick={addProductToCar}
                       variant="outline-info"
                       disabled={product.countInStock === 0}
                     >
                       Add To Cart
+                    </Button>
+                  </div>
+                </ListGroupItem>
+
+                <ListGroupItem>
+                  <div className="d-grid gap-2">
+                    <Button
+                      onClick={addToCartHandler}
+                      variant="outline-info"
+                      disabled={product.countInStock === 0}
+                    >
+                      Go To Cart
                     </Button>
                   </div>
                 </ListGroupItem>
