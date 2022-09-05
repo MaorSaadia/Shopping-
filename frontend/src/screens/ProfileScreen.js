@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Form,
   Button,
@@ -161,8 +161,11 @@ const ProfileScreen = () => {
                       )}
                     </td>
                     <td>
-                      {order.isDelivered ? (
-                        order.deliveredAt?.substring(0, 10)
+                      {order.isDeliverd ? (
+                        <i
+                          className="fas fa-check"
+                          style={{ color: 'Chartreuse' }}
+                        ></i>
                       ) : (
                         <i
                           className="fas fa-times"

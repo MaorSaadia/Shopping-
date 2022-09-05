@@ -6,7 +6,6 @@ import {
   Col,
   FormGroup,
   FormLabel,
-  FormControl,
   FormCheck,
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,7 +17,6 @@ const PaymentScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   if (!shippingAddress) {
@@ -26,7 +24,7 @@ const PaymentScreen = () => {
   }
 
   const [paymentMethod, setPaymentMethod] = useState('PayPal');
-
+  const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));

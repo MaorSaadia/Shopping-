@@ -143,6 +143,7 @@ const ProductEditScreen = () => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></FormControl>
+
               <h5> </h5>
               <input
                 type="file"
