@@ -24,7 +24,9 @@ const PaymentScreen = () => {
   }
 
   const [paymentMethod, setPaymentMethod] = useState('PayPal');
+
   const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));

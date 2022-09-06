@@ -33,7 +33,7 @@ const CartScreen = () => {
     if (id) {
       dispatch(addToCart(id, qty));
     }
-  }, [dispatch, id, qty, navigate]);
+  }, [dispatch, id, qty]);
 
   const checkoutHandler = () => {
     if (!userInfo) {
@@ -41,6 +41,7 @@ const CartScreen = () => {
     } else {
       navigate('/shipping');
     }
+    window.location.reload();
   };
 
   const removeFromCartHandler = (id) => {
