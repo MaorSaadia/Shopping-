@@ -5,6 +5,7 @@ import { Row, Col } from 'react-bootstrap';
 import Product from '../component/Product';
 import Message from '../component/Message';
 import Loader from '../component/Loader';
+import ProductCarousel from '../component/ProductCarousel';
 import Paginate from '../component/Paginate';
 import { listProducts } from '../actions/productAction';
 
@@ -25,6 +26,8 @@ const HomeScreen = () => {
 
   return (
     <>
+      <h1 className="Top">Top Rated</h1>
+      {!keyword && <ProductCarousel />}
       <h1>All Products</h1>
       {loading ? (
         <Loader />
@@ -39,11 +42,13 @@ const HomeScreen = () => {
               </Col>
             ))}
           </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ''}
-          />
+          <div class="pagination">
+            <Paginate
+              pages={pages}
+              page={page}
+              keyword={keyword ? keyword : ''}
+            />
+          </div>
         </>
       )}
     </>

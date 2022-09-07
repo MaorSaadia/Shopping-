@@ -50,3 +50,41 @@ td {
   background-color: #333;
   border-left: 2px solid lightgray;
 }
+
+/* pagination */
+.pagination a.active {
+  background-color: #2f2f2f;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #008080;
+}
+
+.pagination a {
+  transition: background-color 0.5s;
+}
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+.carousel-caption h2 {
+  color: #ddd;
+}
+
+.carousel img {
+  height: 250px;
+  padding: 30px;
+  margin: 40px;
+  border-radius: 30%;
+}
+.carousel a {
+  margin: 0 auto;
+}
