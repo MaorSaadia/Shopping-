@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../component/FormContainer';
 import CheckoutSteps from '../component/CheckoutSteps';
 import { savePaymentMethod } from '../actions/cartActions';
+import Meta from '../component/Meta';
 
 const PaymentScreen = () => {
   const cart = useSelector((state) => state.cart);
@@ -35,6 +36,7 @@ const PaymentScreen = () => {
 
   return (
     <>
+      <Meta title={'Shopping+ | Payment'} />
       <Link className="btn btn-dark my-3" to="/cart">
         Go Back
       </Link>

@@ -12,6 +12,7 @@ import {
   ListGroupItem,
 } from 'react-bootstrap';
 import Message from '../component/Message';
+import Meta from '../component/Meta';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 
 const CartScreen = () => {
@@ -64,6 +65,7 @@ const CartScreen = () => {
 
   return (
     <Row>
+      <Meta title={'Shopping+ | Cart'} />
       <Col md={8}>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (

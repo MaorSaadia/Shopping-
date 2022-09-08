@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../component/Product';
 import Message from '../component/Message';
 import Loader from '../component/Loader';
+import Meta from '../component/Meta';
 import ProductCarousel from '../component/ProductCarousel';
 import Paginate from '../component/Paginate';
 import { listProducts } from '../actions/productAction';
@@ -26,9 +28,20 @@ const HomeScreen = () => {
 
   return (
     <>
-      <h1 className="Top">Top Rated</h1>
-      {!keyword && <ProductCarousel />}
-      <h1>All Products</h1>
+      <Meta title={'Shopping+ | Home'} />
+
+      {!keyword ? (
+        <>
+          <h1 className="Top">Top Rated</h1>
+          <ProductCarousel />
+          <h1>All Products</h1>
+        </>
+      ) : (
+        <Link to="/" className="btn btn-dark">
+          Return
+        </Link>
+      )}
+
       {loading ? (
         <Loader />
       ) : error ? (

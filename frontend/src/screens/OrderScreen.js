@@ -14,6 +14,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../component/Message';
 import Loader from '../component/Loader';
+import Meta from '../component/Meta';
 import {
   getOrderDetails,
   payOrder,
@@ -95,6 +96,7 @@ const OrderScreen = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
+      <Meta title={'Shopping+ | Order'} />
       <h1>Order {order._id}</h1>
       <Row>
         <Col md={8}>

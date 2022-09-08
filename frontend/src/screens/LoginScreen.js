@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Form,
   Button,
@@ -12,6 +12,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../component/Message';
 import Loader from '../component/Loader';
+import Meta from '../component/Meta';
 import FormContainer from '../component/FormContainer';
 import { login } from '../actions/userActions';
 
@@ -24,7 +25,7 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
-  const { loading, error, userInfo } = userLogin;
+  const { loading, error /*userInfo*/ } = userLogin;
 
   const { search } = useLocation();
   const redirect = search ? search.split('=')[1] : '/';
@@ -44,6 +45,7 @@ const LoginScreen = () => {
 
   return (
     <>
+      <Meta title={'Shopping+ | Login'} />
       <FormContainer>
         <div>
           <h1> </h1>

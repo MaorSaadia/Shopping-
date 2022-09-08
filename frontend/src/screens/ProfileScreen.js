@@ -14,6 +14,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../component/Message';
 import Loader from '../component/Loader';
+import Meta from '../component/Meta';
 import { getUserDetails, UpadateUserProfile } from '../actions/userActions';
 import { listMyOrder } from '../actions/orderActions';
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
@@ -68,6 +69,7 @@ const ProfileScreen = () => {
 
   return (
     <>
+      <Meta title={'Shopping+ | Edit'} />
       <Row>
         <Col md={3}>
           <h2>Update Profile</h2>

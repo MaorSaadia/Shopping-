@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../component/FormContainer';
 import CheckoutSteps from '../component/CheckoutSteps';
 import { saveShippingAddress } from '../actions/cartActions';
+import Meta from '../component/Meta';
 
 const ShippingScreen = () => {
   const cart = useSelector((state) => state.cart);
@@ -33,12 +34,12 @@ const ShippingScreen = () => {
 
   return (
     <>
+      <Meta title={'Shopping+ | Shipping'} />
       <Link className="btn btn-dark my-3" to="/cart">
         Go Back
       </Link>
       <FormContainer>
         <CheckoutSteps step1 />
-
         <h1> Shipping</h1>
         <Form onSubmit={submitHandler}>
           <FormGroup controlId="address">
